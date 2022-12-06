@@ -1,0 +1,39 @@
+body {
+
+}
+
+.block {
+    padding: 40px;
+    text-align: center;
+    background-color: lightsteelblue;
+}
+
+.block_row {
+    display: flex;
+    flex-direction: column;
+}
+
+.block_element {
+}
+
+.block_element_1 {
+}
+
+.block_element_2 {
+    flex: 1 1 auto;
+}
+
+.block_element_3 {
+
+}
+
+
+.block_content {
+
+}
+img{
+    border-radius: 50%;
+}
+p {
+
+}
