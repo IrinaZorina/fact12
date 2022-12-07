@@ -9,7 +9,7 @@
     <!-- Адаптив -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="..//Second project/style.css"
+    <link rel="stylesheet" href="../Second project/style.css"
     <meta charset="UTF-8"
 </head>
 <!-- Отображаемое тело страницы -->
@@ -274,7 +274,7 @@ mb_internal_encoding('UTF-8');
 <p>
     <?php
     $user = 'Клиент'; /* регистр имеет значение*/
-    switch ($user){
+    switch ($user){ /*автоматически меняет конструкцию на match, упрощает стиль написания*/
         case 'Клиент':
             echo 'Привет клиент!';
             break;
@@ -285,8 +285,26 @@ mb_internal_encoding('UTF-8');
             echo 'Я тебя не знаю';
     }
     ?>
-
-
+</p>
+<!--конструкция выбора-->
+<p>
+    <?php
+    $q =2; /*снова меняет на switch*/
+    switch ($q){
+        case($q >3 && $q < 6):
+            echo "q равно 0";
+            break;
+        case 1:
+            echo "q равно 1";
+            break;
+        case 2:
+            echo "q равно 2";
+            break;
+        default:
+            echo "q другое значение";
+    }
+    ?>
+</p>
 
 <h2>Оператор include and require </h2>
 <p>
