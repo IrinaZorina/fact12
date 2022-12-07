@@ -5,11 +5,11 @@
 <!-- Заголовок страницы, контейнер для других важных данных (не отображается) -->
 <head>
     <!-- Заголовок страницы в браузере -->
-    <title>Домашнее задание №2</title>
+    <title>Домашнее задание №1</title>
     <!-- Адаптив -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="/style.css"/>
+    <link rel="stylesheet" href="/First%20project/style.css"/>
     <!-- Кодировка страницы -->
     <meta charset="UTF-8"
 </head>
