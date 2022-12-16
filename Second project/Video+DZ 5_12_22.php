@@ -9,7 +9,7 @@
     <!-- Адаптив -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <!-- Подключаем CSS -->
-    <link rel="stylesheet" href="../Second project/style.css"
+    <link rel="stylesheet" href="../Second%20project/style.css"
     <meta charset="UTF-8"
 </head>
 <!-- Отображаемое тело страницы -->
@@ -164,7 +164,7 @@ mb_internal_encoding('UTF-8');
 </p>
 
 <h2> Пример 10 цикл</h2>
-<p>
+
 <h3>Оператор while</h3>
 <p>
     <?php
@@ -175,6 +175,7 @@ mb_internal_encoding('UTF-8');
     }
     ?>
 </p>
+
 <p>
     <?php
     $i1 = 1;
@@ -184,7 +185,7 @@ mb_internal_encoding('UTF-8');
     echo 'Ура! мне 18';
     ?>
 </p>
-</p>
+
 
 <h3>Оператор do while</h3>
 <p>
@@ -274,7 +275,18 @@ mb_internal_encoding('UTF-8');
 <p>
     <?php
     $user = 'Клиент'; /* регистр имеет значение*/
-    switch ($user){ /*автоматически меняет конструкцию на match, упрощает стиль написания*/
+    echo match ($user) {
+        'Клиент' => 'Привет клиент!',
+        'Админ' => 'Привет админ!',
+        default => 'Я тебя не знаю',
+    };
+    ?>
+</p>
+<!-- сверху прмер с match снизу то же самое но с switch-->
+<p>
+    <?php
+    $user = 'Клиент'; /* регистр имеет значение*/
+    switch ($user) { /*автоматически меняет конструкцию на match, упрощает стиль написания*/
         case 'Клиент':
             echo 'Привет клиент!';
             break;
@@ -286,12 +298,14 @@ mb_internal_encoding('UTF-8');
     }
     ?>
 </p>
+
+
 <!--конструкция выбора-->
 <p>
     <?php
-    $q =2; /*снова меняет на switch*/
-    switch ($q){
-        case($q >3 && $q < 6):
+    $q = 2; /*снова меняет на switch*/
+    switch ($q) {
+        case($q > 3 && $q < 6):
             echo "q равно 0";
             break;
         case 1:
@@ -309,10 +323,180 @@ mb_internal_encoding('UTF-8');
 <h2>Оператор include and require </h2>
 <p>
     <?php
+    include "test.php"; /* необходим но не fatal */
+    require "test.php";/* выдает fatal error скрипт останавливается */
+    ?> </p>
+<p>Привет!</p>
 
+
+<h2>Оператор include_once and require_once </h2>
+<!-- чтоб избежать ошибок включения однго файла дважды с require and include-->
+<p>
+    <?php
+    include_once "test.php"; /* необходим но не fatal */
+    require_once "test.php";/* выдает fatal error скрипт останавливается */
+    ?> </p>
+<p>Привет!</p>
+
+<h2> Выполнение задания "select" 1980-2022 с видео урока</h2>
+<p>
+    <select tabindex="10" name="year">
+        <?php
+        for ($year = 1980; $year <= 2022; $year++) {
+            echo "<option > $year </option>";
+        }
+        ?>
+    </select
+</p>
+
+
+<h2> Выполнение задания со слайда 23 </h2>
+<h3> Задание 1 </h3>
+
+<p>
+    <?php
+    for ($s25 = 1; $s25 <= 30; $s25++) {
+        if ($s25 % 2 > 0) {
+            continue;
+        }
+        echo "$s25 <br>";
+    }
     ?>
 </p>
 
+<h3> Задание 2 </h3>
+
+<p>
+    <?php
+    for ($z22 = 1; $z22 <= 50; $z22++) {
+        if ($z22 % 3 == 0 && $z22 % 5 == 0) {
+            echo "<b><i>$z22</i></b> <br> ";
+        } elseif ($z22 % 3 == 0) {
+            echo "<i>$z22</i><br> ";
+        } else {
+            echo "$z22<br> ";
+        }
+    }
+    ?>
+</p>
+
+<h3> Задание 3 </h3>
+
+<h3> Задание 4 </h3>
+
+<!--Дана последовательность, состоящая из дробей: 1/1, 4/2, 7/3, 10/4, ... Какое минимальное количество
+ элементов последовательности нужно сложить, чтобы сумма превысила заданное число S > 10?
+-->
+
+<h4> Цикл с while</h4>
+
+<p>
+    <?php
+    $test = 1;
+    $ita = 1;
+    $sum3 = 0;
+    $counter = 0;
+    while ($sum3 < 10) {
+        $sum3 = $sum3 + $test / $ita;
+        $test += 3;
+        $ita += 1;
+        $counter++;
+    }
+    echo $sum3 . '<br>';
+    echo $counter . '<br>';
+    ?>
+</p>
+
+
+<h2> Выполнение задания со слайда 25 (домашнее задание) </h2>
+
+<h3> Задание 1 </h3>
+
+<h4> Цикл for</h4>
+<p>
+    <?php
+    for ($it = 4; $it++ < 13;) {
+        echo "$it <br/>";
+    }
+    ?>
+</p>
+<h4> Цикл с "break"</h4>
+<p>
+    <?php
+    $it1 = 4;
+    while ($it1++ < 100) {
+        if ($it1 == 14) break;
+        echo "$it1 <br/>";
+    }
+    ?>
+</p>
+<h4> Цикл с do-while</h4>
+<p>
+    <?php
+    $it2 = 5;
+    do {
+        echo "число $it2 <br/>";
+        $it2++;
+    } while ($it2 < 13);
+    echo " Ура число 13";
+    ?>
+</p>
+<h4> Цикл с while</h4>
+<p>
+    <?php
+    $it3 = 4;
+    while ($it3++ < 13) {
+        echo "$it3 <br/>";
+    }
+    ?>
+</p>
+
+<h3> Задание 2 </h3>
+<h4> Цикл с for</h4>
+
+<p>
+    <?php
+    for ($num = 1000, $it4 = 0; $num > 50; $num /= 2, $it4++) ;
+    echo $num . '<br>';/*значение получившееся при делении на 2 i раз*/
+    echo $it4 . '<br>';/* выводит количество циклов сколько раз делил на 2*/
+    ?>
+</p>
+
+<h4> Цикл с while</h4>
+<p>
+    <?php
+    $num = 1000;
+    $it5 = 0;
+    while ($num > 50) {
+        $num /= 2;
+        $it5++;
+    }
+    echo $num . '<br>';/*значение получившееся при делении на 2 i раз*/
+    echo $it5 . '<br>'; /* выводит количество циклов сколько раз делил на 2*/
+    ?>
+</p>
+
+<h3> Задание 3 </h3>
+<h4> Цикл switch</h4>
+<p>
+    <?php
+    $user = '10';
+    echo match ($user) {
+        '0' => '0,1,2,3,4,5,6,7,8,9,10',
+        '1' => '0,1,2,3,4,5,6,7,8,9',
+        '2' => '0,1,2,3,4,5,6,7,8',
+        '3' => '0,1,2,3,4,5,6,7',
+        '4' => '0,1,2,3,4,5,6',
+        '5' => '0,1,2,3,4,5',
+        '6' => '0,1,2,3,4',
+        '7' => '0,1,2,3',
+        '8' => '0,1,2',
+        '9' => '0,1',
+        '10' => '0',
+        default => 'цифры на экране закончились',
+    };
+    ?>
+</p>
 
 </body>
 </html>
