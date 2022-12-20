@@ -6,8 +6,6 @@
 <head>
     <!-- Заголовок страницы в браузере -->
     <title>Повторение за видеоуроком</title>
-    <!-- Адаптив -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
     <!-- Подключаем CSS -->
     <link rel="stylesheet" href="../Third%20project/style.css"
     <meta charset="UTF-8"
@@ -58,9 +56,7 @@ mb_internal_encoding('UTF-8');
     ?>
 </p>
 
-
 <h2> Вывод массива на экран (циклы)</h2>
-
 <p>
     <?php
     $arr3 = ['яблоко', 'ананас', 'банан', 'вода'];
@@ -180,7 +176,6 @@ mb_internal_encoding('UTF-8');
     <?php
     /*$user1=array();*//* инициализируем массив так*/
     $user1 = [];/* либо так */
-
     $user1["name"] = 'Татьяна';
     $user1["surname"] = 'М.';
     $user1["age"] = 31;
@@ -303,9 +298,8 @@ mb_internal_encoding('UTF-8');
 -->
 <p>
     <?php
-
     $sum = array(50, 45, 40, 35, 30);
-    echo "sum(a) = " . array_sum($sum);
+    echo "sum(a) = " . array_sum($sum);/* упрощение */
     ?>
 
 </p>
@@ -390,9 +384,9 @@ mb_internal_encoding('UTF-8');
         'fyodorov' => ["math" => [mt_rand(1, 5)], "physics" => [mt_rand(1, 5)], "chemistry" => [mt_rand(1, 5)], "informatics" => [mt_rand(1, 5)]],
         'fedora' => ["math" => [mt_rand(1, 5)], "physics" => [mt_rand(1, 5)], "chemistry" => [mt_rand(1, 5)], "informatics" => [mt_rand(1, 5)]]
     ];
-    echo '<pre>';
-    print_r($group);
-    echo '</pre>';
+    /*    echo '<pre>';
+        print_r($group);
+        echo '</pre>';*/
     echo '<br>';
 
     foreach ($group as $key => $value) {
@@ -444,7 +438,7 @@ mb_internal_encoding('UTF-8');
     echo '<br>';/*посмотреть след задачу для решения этой*/
     echo "сумма = $summgrade";
     echo '<br>';
-    $del = $summgrade / count($group);
+    $del = $summgrade / count($group);/* хоть какая то оптимизация))*/
     echo "срзнач=$del";
     ?>
 </p>
@@ -456,19 +450,72 @@ mb_internal_encoding('UTF-8');
 <p>
     <?php
     $country = [
-        ["name" => "Куба", "month" => "Январь", "temperature" => mt_rand(20,45)],
-        ["name" => "Тринидад", "month" => "Март", "temperature" => mt_rand(20,45)],
-        ["name" => "Ямайка", "month" => "Сентябрь", "temperature" => mt_rand(20,45)],
-        ["name" => "Гаити", "month" => "Июль", "temperature" => mt_rand(20,45)]
+        ["name" => "Куба", "month" => "Январь", "temperature" => mt_rand(20, 45)],
+        ["name" => "Тринидад", "month" => "Март", "temperature" => mt_rand(20, 45)],
+        ["name" => "Ямайка", "month" => "Сентябрь", "temperature" => mt_rand(20, 45)],
+        ["name" => "Гаити", "month" => "Июль", "temperature" => mt_rand(20, 45)]
     ];
     echo "<p>
     Остров : " . $country[0]["name"] . ",
     Месяц : " . $country[0]["month"] . ",
-    Температура : " . $country[0]["temperature"];
-
-
+    Температура : " . $country[0]["temperature"] . "</p>";
     ?>
 </p>
+
+<h3>Задчада 7</h3>
+<!--Дан двумерный массив из 5 строк и 6 столбцов. Определить для каждого четного столбца максимальный элемент.
+Найти произведение этих элементов.-->
+
+<p>
+    <?php
+    $arr12 = [
+        [mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10)],
+        [mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10)],
+        [mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10)],
+        [mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10)],
+        [mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10), mt_rand(1, 10)],
+    ];/*  echo '<pre>';
+    print_r($arr12);
+    echo '</pre>'*/;
+    echo "<p>
+    " . $arr12[0]["1"] . ",
+    " . $arr12[0]["2"] . ",
+     " . $arr12[0]["3"] . ",
+    " . $arr12[0]["4"] . ",
+   " . $arr12[0]["5"] . "</p>";
+    echo '<br>';
+    echo "<p>
+   " . $arr12[1]["1"] . ",
+     " . $arr12[1]["2"] . ",
+     " . $arr12[1]["3"] . ",
+   " . $arr12[1]["4"] . ",
+   " . $arr12[1]["5"] . "</p>";
+    echo '<br>';
+    echo "<p>
+    " . $arr12[2]["1"] . ",
+    " . $arr12[2]["2"] . ",
+     " . $arr12[2]["3"] . ",
+    " . $arr12[2]["4"] . ",
+     " . $arr12[2]["5"] . "</p>";
+    echo '<br>';
+    echo "<p>
+   " . $arr12[3]["1"] . ",
+ " . $arr12[3]["2"] . ",
+ " . $arr12[3]["3"] . ",
+ " . $arr12[3]["4"] . ",
+ " . $arr12[3]["5"] . "</p>";
+    echo '<br>';
+    echo "<p>
+" . $arr12[4]["1"] . ",
+ " . $arr12[4]["2"] . ",
+" . $arr12[4]["3"] . ",
+ " . $arr12[4]["4"] . ",
+ " . $arr12[4]["5"] . "</p>";
+
+    ?>
+    решение так и не пришло мне в голову
+</p>
+
 
 <h2> Решение задач слайд 17 </h2>
 Решение этих задач на тему 12.12.2022
