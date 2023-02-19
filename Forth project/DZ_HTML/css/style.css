@@ -109,10 +109,6 @@ body {
     border-radius: 50%;
 }
 
-span {
-    color: red;
-}
-
 /*Домашние задание №2*/
 
 /*добавил общего родителя content2 и content3*/
@@ -156,7 +152,11 @@ span {
     font-size: 30px;
     text-shadow: 2px 2px 2px black;
     flex-grow: 1;
+}
 
+/*замена текста в теге span class="red" */
+.red {
+    color: red;
 }
 
 .conten32 {
@@ -177,6 +177,22 @@ span {
     padding: 20px;
     line-height: 35px;
 }
+
+
+/*окрашиваем четные и нечетные слова span class="purple" */
+.purple {
+    color: purple;
+}
+
+/*окрашиваем четные и нечетные слова span class="green" */
+.green {
+    color: green;
+}
+/*общий размер текста для классов green и purple */
+.green, .purple {
+    font-size: 20px;
+}
+
 
 .content_text > h2 {
     font-weight: 700;
@@ -275,7 +291,11 @@ span {
     width: 100%;
     height: 300px;
 }
-
+/*class_DZ*/
+.class_DZ{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-size: 30px;
+}
 
 /*footer*/
 

@@ -139,7 +139,13 @@ mb_internal_encoding('UTF-8');
     <input type="submit">
 </form>
 </p>
-
+<h2>Смотри это юудет выводиться логин и пароль </h2>
+<p>
+    <?php /* пользователь этого не видит*/
+    print_r($_POST); /*глобальный масси*/ /* заменили метожд на POSt вместо GET*/
+    /*http://fact12/Sixth%20project/Video+DZ%2019_12_22.php/?id=2&img=2 в конце строки поставили id и img */
+    ?>
+</p>
 
 
 
